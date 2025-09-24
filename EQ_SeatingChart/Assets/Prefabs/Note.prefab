@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4729616518453365782}
   - component: {fileID: 1568942173390837307}
   - component: {fileID: 4623743789718550869}
+  - component: {fileID: 1523024252497289731}
   m_Layer: 5
   m_Name: Note
   m_TagString: Untagged
@@ -105,6 +106,31 @@ MonoBehaviour:
   paperObjectRectTransform: {fileID: 4769380336349882263}
   paperObjectCanvasGroup: {fileID: 1568942173390837307}
   backgroundCanvas: {fileID: 0}
+--- !u!114 &1523024252497289731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589651691795887427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63f741fe14528b4094be06b1c9ea1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoteView
+  noteRect: {fileID: 4769380336349882263}
+  message:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &8116233825818722588
 GameObject:
   m_ObjectHideFlags: 0

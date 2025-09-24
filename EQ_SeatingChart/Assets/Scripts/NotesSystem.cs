@@ -1,20 +1,28 @@
+using System;
 using UnityEngine;
+using UnityEngine.Localization.Tables;
+using Random = UnityEngine.Random;
 
 public class NotesSystem : MonoBehaviour
 {
-    public GameObject notePrefab;
-    public Transform deskArea; // Parent canvas area for notes
+    [SerializeField] private NoteView noteTemplate;
+    [SerializeField] private Transform deskArea;
 
-    public void SpawnNote(string message)
+    private void Awake()
     {
-        GameObject note = Instantiate(notePrefab, deskArea);
-        RectTransform noteRect = note.GetComponent<RectTransform>();
-
-        // Randomize spawn position + rotation for “thrown” effect
-        noteRect.anchoredPosition = new Vector2(Random.Range(-200, 200), Random.Range(-100, 100));
-        noteRect.localRotation = Quaternion.Euler(0, 0, Random.Range(-10f, 10f));
-
-        // Set text
-        note.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = message;
+        if (noteTemplate != null)
+            noteTemplate.gameObject.SetActive(false); // hide template
     }
+    
+    public void CreateNote(string localizationKey)
+    {
+        NoteView note = Instantiate(this.noteTemplate, this.deskArea);
+
+        // Localize
+        note.Message.SetReference(default, localizationKey);
+
+        note.PaperObject.SpawnOnDesk();
+    }
+    
+
 }
