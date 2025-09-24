@@ -2,16 +2,24 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
+public enum TableType { Round, Rectangular }
+public enum RoomZone { HeadTable, Front, Middle, Back, Windows, Doors }
+
 [ExecuteInEditMode]
 public class TableController : MonoBehaviour
 {
-    public GameObject seatPrefab;
-    [SerializeField] private TableSO tableData;
-    private List<SeatSlot> seats = new List<SeatSlot>();
-
+    [Header("Table Settings")] 
+    
+    [SerializeField] private TableType tableType;
+    [SerializeField] public List<RoomZone> roomZones;
+    
     [SerializeField] private float spacing;
-    [SerializeField] private float radius;
-
+    [SerializeField] private float oppositeSpacing;
+    
+    [SerializeField] [Range(2, 20)] private int seatCount = 6;
+    [SerializeField] private GameObject seatPrefab;
+    [SerializeField] private List<SeatSlot> seats = new();
+    
     public void BuildTable()
     {
         // clear existing seats
@@ -24,27 +32,24 @@ public class TableController : MonoBehaviour
         
         seats.Clear();
 
-        if (tableData == null) return;
-
         // Generate seats based on type
-        if (tableData.tableType == TableType.Round)
+        if (this.tableType == TableType.Round)
             BuildRound();
         else
             BuildRectangular();
 
         // Assign relationships
         LinkRelationships();
-
-        // Assign zone
-        foreach (var seat in seats)
-            seat.roomZone = tableData.roomZone;
+        
     }
 
     void BuildRound()
     {
-        for (int i = 0; i < tableData.seatCount; i++)
+        for (int i = 0; i < this.seatCount; i++)
         {
-            float angle = (360f / tableData.seatCount) * i;
+            float angle = (360f / this.seatCount) * i;
+            float radius = this.oppositeSpacing / 2; 
+            
             Vector3 pos = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * radius;
             var seatObj = Instantiate(seatPrefab, transform);
             seatObj.transform.localPosition = pos;
@@ -52,38 +57,47 @@ public class TableController : MonoBehaviour
             SeatSlot seat = seatObj.GetComponent<SeatSlot>();
             //seat.tableId = GetInstanceID();
             seat.seatIndex = i;
+            seatObj.name = $"Seat_{i}";
             seats.Add(seat);
         }
     }
 
     void BuildRectangular()
     {
-        int seatsPerSide = tableData.seatCount / 2;
+        float topRowYPos = this.oppositeSpacing / 2;
+        float bottomRowYPos = -topRowYPos;
+        
+        int seatsPerSide = this.seatCount / 2;
         for (int i = 0; i < seatsPerSide; i++)
         {
             // Top row
+            float topRowXPos = i * this.spacing;
             var top = Instantiate(seatPrefab, transform);
-            top.transform.localPosition = new Vector3(i * spacing, 50f, 0);
+            top.transform.localPosition = new Vector3(topRowXPos, topRowYPos, 0);
             var seatTop = top.GetComponent<SeatSlot>();
             //seatTop.tableId = GetInstanceID();
             seatTop.seatIndex = i;
+            seatTop.name = $"Seat_{i}";
             seats.Add(seatTop);
         }
-        for (int i = seatsPerSide; i < tableData.seatCount; i++)
+        for (int i = seatsPerSide; i < this.seatCount; i++)
         {
             // Bottom row
+            float bottomRowXpos = (i - seatsPerSide) * this.spacing;
             var bottom = Instantiate(seatPrefab, transform);
-            bottom.transform.localPosition = new Vector3((i - seatsPerSide) * spacing, -50f, 0);
+            bottom.transform.localPosition = new Vector3(bottomRowXpos, bottomRowYPos, 0);
             var seatBottom = bottom.GetComponent<SeatSlot>();
             //seatBottom.tableId = GetInstanceID();
-            seatBottom.seatIndex = i + seatsPerSide;
+            seatBottom.seatIndex = i;
+            seatBottom.name = $"Seat_{i}";
             seats.Add(seatBottom);
+            
         }
     }
 
     void LinkRelationships()
     {
-        if (tableData.tableType == TableType.Round)
+        if (this.tableType == TableType.Round)
         {
             int count = seats.Count;
             for (int i = 0; i < count; i++)
@@ -102,7 +116,7 @@ public class TableController : MonoBehaviour
                 s.sameTable = new List<SeatSlot>(seats);
             }
         }
-        else if (tableData.tableType == TableType.Rectangular)
+        else if (this.tableType == TableType.Rectangular)
         {
             int half = seats.Count / 2;
             for (int i = 0; i < seats.Count; i++)
@@ -127,4 +141,11 @@ public class TableController : MonoBehaviour
         }
     }
 
+    public void OnValidate()
+    {
+        if (this.seatCount % 2 != 0)
+        {
+            this.seatCount++;
+        }
+    }
 }

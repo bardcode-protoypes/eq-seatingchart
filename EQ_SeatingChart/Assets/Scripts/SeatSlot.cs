@@ -5,11 +5,12 @@ using UnityEngine.EventSystems;
 public class SeatSlot : MonoBehaviour, IDropHandler
 {
     public GuestCard CurrentGuestCard;
-    public RoomZone roomZone;
     public int seatIndex;
     public List<SeatSlot> nextTo;
     public SeatSlot oppositeTo;
     public List<SeatSlot> sameTable;
+    
+    public List<RoomZone> roomZones => GetComponentInParent<TableController>().roomZones;
 
     public void OnDrop(PointerEventData eventData)
     {
