@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: UITexts Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
   m_TableCollectionName: UITexts
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: 3738ec8c383f00d4ea408674da5cfa74
+  m_Entries:
+  - m_Id: 835310632960
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
