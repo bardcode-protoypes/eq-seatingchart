@@ -14,13 +14,15 @@ public class PaperObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     
     public void SpawnOnDesk()
     {
+        paperObjectCanvasGroup.alpha = 1;
+        
         paperObjectRectTransform.anchoredPosition = new Vector2(
             Random.Range(-200f, 200f),
             Random.Range(-200f, 200f)
         );
 
         paperObjectRectTransform.localRotation = Quaternion.Euler(
-            0, 0, Random.Range(-100, 100)
+            0, 0, Random.Range(-30, 30)
         );
     }
 

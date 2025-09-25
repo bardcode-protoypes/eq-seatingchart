@@ -1,4 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/debugUI.uss?fileID=7433441132597879392&amp;guid=4670d9cf36462cc43b6142b592d69af8&amp;type=3#debugUI" />
-    <ui:Button text="Add note" data-source="project://database/Assets/Data/Guests/GuestCard.asset?fileID=11400000&amp;guid=c8039b42668b15f4fad3ead06846215a&amp;type=2#GuestCard" style="width: 216px;" />
+    <Style src="project://database/Assets/UI/dropdownMenu.uss?fileID=7433441132597879392&amp;guid=a5f81d47165d5ff4bb829d51f1101ffa&amp;type=3#dropdownMenu" />
+    <ui:VisualElement name="debugMenuContainer" style="flex-grow: 1; flex-direction: row; height: 10%; bottom: auto; flex-basis: auto; flex-wrap: wrap; max-height: 5%;">
+        <ui:Button text="Add note" data-source="project://database/Assets/Data/Guests/GuestCard.asset?fileID=11400000&amp;guid=c8039b42668b15f4fad3ead06846215a&amp;type=2#GuestCard" name="addNoteButton" style="width: 216px;" />
+        <ui:DropdownField label="Language" name="languageSelection" choices="English,German" style="right: 0; top: auto; flex-direction: column; font-size: 14px;" />
+    </ui:VisualElement>
 </ui:UXML>

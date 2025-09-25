@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.Localization.Tables;
 using Random = UnityEngine.Random;
@@ -11,7 +12,7 @@ public class NotesSystem : MonoBehaviour
     private void Awake()
     {
         if (noteTemplate != null)
-            noteTemplate.gameObject.SetActive(false); // hide template
+            noteTemplate.NoteCanvasGroup.alpha = 0; 
     }
     
     public void CreateNote(string localizationKey)
@@ -23,6 +24,5 @@ public class NotesSystem : MonoBehaviour
 
         note.PaperObject.SpawnOnDesk();
     }
-    
 
 }

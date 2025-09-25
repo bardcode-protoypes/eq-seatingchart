@@ -18,7 +18,8 @@ public class TableController : MonoBehaviour
     
     [SerializeField] [Range(2, 20)] private int seatCount = 6;
     [SerializeField] private GameObject seatPrefab;
-    [SerializeField] private List<SeatSlot> seats = new();
+    
+    private List<SeatSlot> seats = new();
     
     public void BuildTable()
     {
