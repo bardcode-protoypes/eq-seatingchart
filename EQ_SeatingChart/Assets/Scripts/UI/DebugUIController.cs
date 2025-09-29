@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UIElements;
@@ -20,15 +21,19 @@ public class DebugUIController : MonoBehaviour
             };
         }
         // Language dropdown
-        var languageDropdown = this.uiDocument.rootVisualElement.Q<DropdownField>("languageDropdown");
+        var languageDropdown = this.uiDocument.rootVisualElement.Q<DropdownField>("languageSelection");
         if (languageDropdown != null && this.localizationManager != null)
         {
+            languageDropdown.choices.Clear();
             languageDropdown.choices = new System.Collections.Generic.List<string>(localizationManager.GetAvailableLocaleNames());
-            languageDropdown.value = this.localizationManager.GetCurrentLocaleName();
-
             languageDropdown.RegisterValueChangedCallback(evt =>
             {
-                this.localizationManager.SetLocaleByName(evt.newValue);
+                int selectedIndex = languageDropdown.index;
+                if (selectedIndex >= 0 && selectedIndex < localizationManager.GetAvailableLocaleNames().Length)
+                {
+                    string selectedLocaleName = localizationManager.GetAvailableLocaleNames()[selectedIndex];
+                    localizationManager.SetLocaleByName(selectedLocaleName);
+                }
             });
         }
     }

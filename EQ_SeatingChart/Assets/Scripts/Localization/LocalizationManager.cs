@@ -1,29 +1,65 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class LocalizationManager : MonoBehaviour
 {
     private const string PlayerPrefsKey = "selectedLocale";
-
-    public delegate void LocaleChanged();
-    public static event LocaleChanged OnLocaleChanged;
-
+    public static LocalizationManager Instance { get; private set; }
+    
     private void Awake()
     {
-        // Load persisted locale or default
-        string savedCode = PlayerPrefs.GetString(PlayerPrefsKey, string.Empty);
-
-        if (!string.IsNullOrEmpty(savedCode))
+        if (Instance != null && Instance != this)
         {
-            SetLocale(savedCode);
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        StartCoroutine(this.Initialize());
+
+    }
+    private IEnumerator Initialize()
+    {
+        // ensure LocalizationSettings is ready
+        yield return new WaitForEndOfFrame();
+        
+        // Wait for localization to initialize
+        var initOperation = LocalizationSettings.InitializationOperation;
+        if (!initOperation.IsValid())
+        {
+            Debug.LogError("LocalizationSettings.InitializationOperation is not valid. Check LocalizationSettings setup.");
+            yield break;
+        }
+        
+        yield return initOperation;
+
+        if (initOperation.Status == AsyncOperationStatus.Succeeded)
+        {
+            // Load persisted locale or default
+            string savedCode = PlayerPrefs.GetString(PlayerPrefsKey, string.Empty);
+            if (!string.IsNullOrEmpty(savedCode))
+            {
+                SetLocale(savedCode);
+            }
+            else
+            {
+                // Default to first available locale if nothing saved
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
+            }
         }
         else
         {
-            // Default to first available locale if nothing saved
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
+            Debug.LogError("Failed to initialize localization!");
         }
     }
+
+
 
     public void SetLocale(string localeCode)
     {
@@ -34,8 +70,9 @@ public class LocalizationManager : MonoBehaviour
                 LocalizationSettings.SelectedLocale = locale;
                 PlayerPrefs.SetString(PlayerPrefsKey, localeCode);
                 PlayerPrefs.Save();
+                
                 Debug.Log($"Language set to: {locale.Identifier.CultureInfo.NativeName}");
-                OnLocaleChanged?.Invoke();
+                
                 return;
             }
         }

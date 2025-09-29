@@ -14,7 +14,7 @@ public class NotesSystem : MonoBehaviour
         if (noteTemplate != null)
             noteTemplate.NoteCanvasGroup.alpha = 0; 
     }
-    
+
     public void CreateNote(string localizationKey)
     {
         NoteView note = Instantiate(this.noteTemplate, this.deskArea);

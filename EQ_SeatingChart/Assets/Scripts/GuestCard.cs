@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 using UnityEngine.UI;
 
 public class GuestCard : MonoBehaviour
@@ -6,16 +8,16 @@ public class GuestCard : MonoBehaviour
     public GuestSO guestData;
 
     public Image portraitImage;
-    public TMPro.TextMeshProUGUI nameText;
-    public TMPro.TextMeshProUGUI description;
+    public LocalizedString nameText;
+    public LocalizedString description;
 
     void Start()
     {
         if (guestData != null)
         {
             portraitImage.sprite = guestData.portrait;
-            nameText.text = guestData.guestName;
-            description.text = guestData.description;
+            nameText.SetReference(default, guestData.guestNameRef);
+            description.SetReference(default, guestData.descriptionRef);
         }
     }
 }

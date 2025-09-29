@@ -22,6 +22,14 @@ MonoBehaviour:
     m_Localized: This is a note.
     m_Metadata:
       m_Items: []
+  - m_Id: 1823223937548288
+    m_Localized: Add Note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1823341097041920
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
