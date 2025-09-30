@@ -1,8 +1,8 @@
 ---
-description: Game Design Documentation
+description: 'Seating Chart: A royal Arrangement'
 ---
 
-# Seating Chart (A royal arrangement)
+# Game Design Documentation
 
 ### Overview
 

@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Seating Chart (A royal arrangement)](README.md)
+* [Game Design Documentation](README.md)
