@@ -1,8 +1,5 @@
-using System;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
-using UnityEngine.Localization.Tables;
-using Random = UnityEngine.Random;
+
 
 public class NotesSystem : MonoBehaviour
 {

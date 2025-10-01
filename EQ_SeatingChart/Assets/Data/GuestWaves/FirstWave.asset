@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3d7baec3798014a847616a0ff5e1a5, type: 3}
+  m_Name: FirstWave
+  m_EditorClassIdentifier: Assembly-CSharp::GuestWaveSO
+  guests:
+  - {fileID: 11400000, guid: c8039b42668b15f4fad3ead06846215a, type: 2}
+  - {fileID: 11400000, guid: e0a868b16b40b2140b37ae21e452be6a, type: 2}
+  - {fileID: 11400000, guid: d38061db8593c3d46a6e277aa4e799d3, type: 2}
+  noteKeys:
+  - debug_note
+  autoAdvance: 0

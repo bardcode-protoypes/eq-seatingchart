@@ -7,6 +7,7 @@ public class DebugUIController : MonoBehaviour
 {
     [SerializeField] private UIDocument uiDocument;
     [SerializeField] private NotesSystem notesSystem;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private LocalizationManager localizationManager;
     private void OnEnable()
     {
@@ -18,6 +19,15 @@ public class DebugUIController : MonoBehaviour
             {
                 this.notesSystem.CreateNote("debug_note");
                 Debug.Log("note spawned");
+            };
+        }
+        // Debug Validation
+        var validateButton = this.uiDocument.rootVisualElement.Q<Button>("validateButton");
+        if (validateButton != null)
+        {
+            validateButton.clicked += () =>
+            {
+                this.gameManager.ValidateArrangement();
             };
         }
         // Language dropdown

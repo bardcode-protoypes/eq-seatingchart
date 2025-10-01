@@ -30,6 +30,30 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 2532875843190784
+    m_Localized: Lord Hesketh-Fortescue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533086971871232
+    m_Localized: A sick lord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533237362835456
+    m_Localized: Gwyneth Molesworth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533562253623296
+    m_Localized: Not next to or opposite Fortescue.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533853149577216
+    m_Localized: Needs to sit next to her husband.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533750049390592
+    m_Localized: Meredith Hesketh-Fortescue
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

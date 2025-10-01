@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ce33701337576f4f94516613bf1889c, type: 3}
-  m_Name: GuestCard
+  m_Name: Guest_LadyFortescue
   m_EditorClassIdentifier: Assembly-CSharp::GuestSO
-  guestName: Lord Fortescue
+  guestId: ladyfortescue
   portrait: {fileID: 0}
-  description: Ein toller Lord
-  naturalLanguageRules:
-  - Will nicht neben dem Prinzen sitzen
+  rules:
+  - type: 0
+    targetGuest: {fileID: 11400000, guid: c8039b42668b15f4fad3ead06846215a, type: 2}
+    targetZone: 1

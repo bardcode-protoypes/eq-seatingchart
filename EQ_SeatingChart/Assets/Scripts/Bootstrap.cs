@@ -33,13 +33,12 @@ public class Bootstrap : MonoBehaviour
     private void InitializeSystems()
     {
         // Initialize audio
-        // Initialize Save System
-        // Initialize input
-        
+        // ToDo: Initialize Save System
+
         Debug.Log("Game systems initialized.");
     }
     
-    // Use DontDestroyOnLoad for objects that should persist across scenes (e.g., audio manager, game manager)
+    // ToDo: Use DontDestroyOnLoad for objects that should persist across scenes (e.g., audio manager, game manager)
     
-    // Check for required systems and log errors if something fails to initialize.
+    // ToDo: Check for required systems and log errors if something fails to initialize.
 }

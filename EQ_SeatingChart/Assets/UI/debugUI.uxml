@@ -1,11 +1,12 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/debugUI.uss?fileID=7433441132597879392&amp;guid=4670d9cf36462cc43b6142b592d69af8&amp;type=3#debugUI" />
+    <Style src="project://database/Assets/UI/debugUI.uss?fileID=7433441132597879392&amp;guid=4670d9cf36462cc43b6142b592d69af8&amp;type=3" />
     <ui:VisualElement name="debugMenuContainer" style="flex-grow: 1; flex-direction: row; height: 10%; bottom: auto; flex-basis: auto; flex-wrap: wrap; max-height: 5%;">
-        <ui:Button text="Add note" data-source="project://database/Assets/Data/Guests/GuestCard.asset?fileID=11400000&amp;guid=c8039b42668b15f4fad3ead06846215a&amp;type=2#GuestCard" name="addNoteButton" double-click-selects-word="false" style="width: 216px; -unity-font-style: bold;">
+        <ui:Button text="Add note" data-source="project://database/Assets/Data/Guests/Guest_Fortescue.asset?fileID=11400000&amp;guid=c8039b42668b15f4fad3ead06846215a&amp;type=2#Guest_Fortescue" name="addNoteButton" double-click-selects-word="false" style="width: 216px; -unity-font-style: bold;">
             <Bindings>
                 <UnityEngine.Localization.LocalizedString property="text" table="GUID:3738ec8c383f00d4ea408674da5cfa74" entry="Id(1823223937548288)" />
             </Bindings>
         </ui:Button>
+        <ui:Button text="Validate" name="validateButton" double-click-selects-word="false" parse-escape-sequences="false" style="width: 216px; -unity-font-style: bold;" />
         <ui:DropdownField label="Language" name="languageSelection" choices="English,German" index="0" style="right: 0; top: auto; flex-direction: column; font-size: 14px; -unity-font-style: bold; background-color: rgb(194, 194, 194);">
             <Bindings>
                 <UnityEngine.Localization.LocalizedString property="label" table="GUID:3738ec8c383f00d4ea408674da5cfa74" entry="Id(1823341097041920)" />

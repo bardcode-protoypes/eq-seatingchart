@@ -93,3 +93,4 @@ MonoBehaviour:
   nextTo: []
   oppositeTo: {fileID: 0}
   sameTable: []
+  seatRect: {fileID: 4970149578029329693}

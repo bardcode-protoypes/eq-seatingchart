@@ -27,6 +27,30 @@ MonoBehaviour:
     m_Key: settings_language
     m_Metadata:
       m_Items: []
+  - m_Id: 2532875843190784
+    m_Key: guest_fortescue_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533086971871232
+    m_Key: guest_fortescue_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533237362835456
+    m_Key: guest_molesworth_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533562253623296
+    m_Key: guest_molesworth_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533750049390592
+    m_Key: guest_ladyfortescue_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533853149577216
+    m_Key: guest_ladyfortescue_desc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
