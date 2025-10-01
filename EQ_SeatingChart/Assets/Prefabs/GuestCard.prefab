@@ -32,11 +32,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7472824862234563930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52, y: -0.000002861}
-  m_SizeDelta: {x: 76.8869, y: 78.6648}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 10, y: 10}
+  m_SizeDelta: {x: 60, y: -40}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8318992695065141339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2438342613415109333}
   - component: {fileID: 5555303740499421297}
   - component: {fileID: 234972237617829942}
+  - component: {fileID: 813244714113185490}
   - component: {fileID: 6766341650399640140}
   m_Layer: 5
   m_Name: GuestCard
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9411765, g: 0.5019608, b: 0.5019608, a: 1}
+  m_Color: {r: 0.18649878, g: 0.23629795, b: 0.31132078, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -183,6 +184,21 @@ MonoBehaviour:
   paperObjectRectTransform: {fileID: 7472824862234563930}
   paperObjectCanvasGroup: {fileID: 5555303740499421297}
   backgroundCanvas: {fileID: 0}
+--- !u!114 &813244714113185490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4304569109351825938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b210a3a8c20c8f04098c7ac137d83ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GuestCardController
+  guestData: {fileID: 11400000, guid: c8039b42668b15f4fad3ead06846215a, type: 2}
+  paperObject: {fileID: 234972237617829942}
+  guestCardView: {fileID: 6766341650399640140}
 --- !u!114 &6766341650399640140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,10 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de9bf1bb9732d74580d38802f124052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuestCard
-  guestData: {fileID: 0}
   portraitImage: {fileID: 1026599454130787075}
-  nameText: {fileID: 5502098381378665325}
-  description: {fileID: 6980598602150798298}
+  nameText: {fileID: 1593049255310549283}
+  description: {fileID: 1237647923538151967}
+  cardRect: {fileID: 7472824862234563930}
 --- !u!1 &5366898506202207085
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,11 +248,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7472824862234563930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 25.461288}
-  m_SizeDelta: {x: 100, y: 27.7414}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -20}
+  m_SizeDelta: {x: 120, y: 25}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5658686497173031269
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -292,8 +308,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -350,17 +366,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:3738ec8c383f00d4ea408674da5cfa74
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 2533750049390592
       m_Key: 
     m_FallbackState: 0
-    m_WaitForCompletion: 0
+    m_WaitForCompletion: 1
     m_LocalVariables: []
   m_FormatArguments: []
   m_UpdateString:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5502098381378665325}
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -397,11 +425,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7472824862234563930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.0457, y: -13.871}
-  m_SizeDelta: {x: 86.0913, y: 50.923}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 8.4246}
+  m_SizeDelta: {x: 120, y: 43.4246}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &4799209666440731082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -457,8 +485,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -525,7 +553,19 @@ MonoBehaviour:
   m_FormatArguments: []
   m_UpdateString:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6980598602150798298}
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   references:
     version: 2
     RefIds: []

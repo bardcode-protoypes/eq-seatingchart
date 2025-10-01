@@ -11,6 +11,20 @@ public class PaperObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Canvas backgroundCanvas;
 
     private Vector2 originalPosition;
+    
+    public void SpawnOnDesk()
+    {
+        paperObjectCanvasGroup.alpha = 1;
+        
+        paperObjectRectTransform.anchoredPosition = new Vector2(
+            Random.Range(-200f, 200f),
+            Random.Range(-200f, 200f)
+        );
+
+        paperObjectRectTransform.localRotation = Quaternion.Euler(
+            0, 0, Random.Range(-30, 30)
+        );
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {

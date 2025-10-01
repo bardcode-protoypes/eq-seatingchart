@@ -4,25 +4,23 @@ using UnityEngine.EventSystems;
 
 public class SeatSlot : MonoBehaviour, IDropHandler
 {
-    public GuestCard CurrentGuestCard;
+    public GuestCardController CurrentGuestCard;
     public int seatIndex;
     public List<SeatSlot> nextTo;
     public SeatSlot oppositeTo;
     public List<SeatSlot> sameTable;
+
+    [SerializeField] private RectTransform seatRect;
+    public RectTransform SeatRect => this.seatRect;
     
     public List<RoomZone> roomZones => GetComponentInParent<TableController>().roomZones;
 
     public void OnDrop(PointerEventData eventData)
     {
-        GuestCard guestCard = eventData.pointerDrag.GetComponent<GuestCard>();
+        GuestCardController guestCard = eventData.pointerDrag.GetComponent<GuestCardController>();
         if (guestCard != null)
         {
-            // Snap to slot
-            RectTransform guestCardRect = guestCard.GetComponent<RectTransform>();
-            guestCardRect.position = this.GetComponent<RectTransform>().position;
-
-            // Register occupant
-            this.CurrentGuestCard = guestCard;
+            guestCard.PlaceAtSeat(this);
         }
     }
 }

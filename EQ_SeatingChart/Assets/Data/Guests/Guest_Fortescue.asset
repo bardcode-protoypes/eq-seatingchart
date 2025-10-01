@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce33701337576f4f94516613bf1889c, type: 3}
+  m_Name: Guest_Fortescue
+  m_EditorClassIdentifier: Assembly-CSharp::GuestSO
+  guestId: fortescue
+  portrait: {fileID: 0}
+  rules:
+  - type: 0
+    targetGuest: {fileID: 11400000, guid: e0a868b16b40b2140b37ae21e452be6a, type: 2}
+    targetZone: 1
+  - type: 1
+    targetGuest: {fileID: 11400000, guid: d38061db8593c3d46a6e277aa4e799d3, type: 2}
+    targetZone: 1
+  - type: 3
+    targetGuest: {fileID: 11400000, guid: d38061db8593c3d46a6e277aa4e799d3, type: 2}
+    targetZone: 1
+  - type: 6
+    targetGuest: {fileID: 11400000, guid: d38061db8593c3d46a6e277aa4e799d3, type: 2}
+    targetZone: 1

@@ -13,8 +13,44 @@ MonoBehaviour:
   m_Name: UITexts Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
   m_TableCollectionName: UITexts
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: 3738ec8c383f00d4ea408674da5cfa74
+  m_Entries:
+  - m_Id: 835310632960
+    m_Key: debug_note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1823223937548288
+    m_Key: ui_debug_addnote
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1823341097041920
+    m_Key: settings_language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2532875843190784
+    m_Key: guest_fortescue_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533086971871232
+    m_Key: guest_fortescue_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533237362835456
+    m_Key: guest_molesworth_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533562253623296
+    m_Key: guest_molesworth_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533750049390592
+    m_Key: guest_ladyfortescue_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533853149577216
+    m_Key: guest_ladyfortescue_desc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
