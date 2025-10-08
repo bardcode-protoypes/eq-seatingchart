@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Guest_Fortescue
   m_EditorClassIdentifier: Assembly-CSharp::GuestSO
   guestId: fortescue
-  portrait: {fileID: 0}
+  portrait: {fileID: 6941358560297535979, guid: 06531feee508a894ba9444cb09b8a3ec, type: 3}
   rules:
   - type: 0
     targetGuest: {fileID: 11400000, guid: e0a868b16b40b2140b37ae21e452be6a, type: 2}

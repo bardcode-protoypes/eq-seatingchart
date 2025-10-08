@@ -46,10 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b7411550bd461143bbf1da96a05fcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TableController
-  seatPrefab: {fileID: 3515926124769667158, guid: 76eafa912d46eaa4cb6af5e258ce0fbd, type: 3}
-  tableData: {fileID: 11400000, guid: 48ebfcd1d9691154ba03e8f0d5e9b0dc, type: 2}
+  tableType: 0
+  roomZones: 
   spacing: 200
-  radius: 200
+  oppositeSpacing: 0
+  seatCount: 6
+  seatPrefab: {fileID: 3515926124769667158, guid: 76eafa912d46eaa4cb6af5e258ce0fbd, type: 3}
 --- !u!1 &1601893033057420265
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeatSlot
   CurrentGuestCard: {fileID: 0}
-  roomZone: 0
   seatIndex: 1
   nextTo:
   - {fileID: 2025693520052456244}
@@ -148,6 +149,7 @@ MonoBehaviour:
   sameTable:
   - {fileID: 2025693520052456244}
   - {fileID: 814269806530778456}
+  seatRect: {fileID: 0}
 --- !u!1 &4880514493475168950
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +186,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &330115437197484555
 CanvasRenderer:
@@ -237,7 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SeatSlot
   CurrentGuestCard: {fileID: 0}
-  roomZone: 0
   seatIndex: 0
   nextTo:
   - {fileID: 814269806530778456}
@@ -246,3 +247,4 @@ MonoBehaviour:
   sameTable:
   - {fileID: 2025693520052456244}
   - {fileID: 814269806530778456}
+  seatRect: {fileID: 0}
