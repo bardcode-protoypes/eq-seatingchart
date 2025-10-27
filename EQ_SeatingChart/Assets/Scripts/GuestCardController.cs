@@ -36,8 +36,8 @@ public class GuestCardController : MonoBehaviour
         if (guestData != null)
         {
             this.guestCardView.PortraitImage.sprite = guestData.Portrait;
-            this.guestCardView.NameText.StringReference.SetReference("UITexts", guestData.GuestNameRef);
-            this.guestCardView.Description.StringReference.SetReference("UITexts", guestData.DescriptionRef);
+            this.guestCardView.FirstNameText.StringReference.SetReference("UITexts", guestData.GuestFirstNameRef);
+            this.guestCardView.LastNameText.StringReference.SetReference("UITexts", guestData.GuestLastNameRef);
         }
     }
 

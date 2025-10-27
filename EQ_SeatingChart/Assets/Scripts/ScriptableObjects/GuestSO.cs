@@ -9,11 +9,11 @@ public class GuestSO : ScriptableObject
     [Header("Guest Identity")] 
     public string guestId;
     
-    private TableEntryReference guestNameRef;
-    public TableEntryReference GuestNameRef => this.guestNameRef;
+    private TableEntryReference guestFirstNameRef;
+    public TableEntryReference GuestFirstNameRef => this.guestFirstNameRef;
     
-    private TableEntryReference descriptionRef;
-    public TableEntryReference DescriptionRef => this.descriptionRef;
+    private TableEntryReference guestLastNameRef;
+    public TableEntryReference GuestLastNameRef => this.guestLastNameRef;
     
     [SerializeField] private Sprite portrait;
     public Sprite Portrait => this.portrait;
@@ -23,7 +23,7 @@ public class GuestSO : ScriptableObject
 
     private void OnValidate()
     {
-        this.guestNameRef = "guest_" + guestId + "_name";
-        this.descriptionRef = "guest_" + guestId + "_desc";
+        this.guestFirstNameRef = "guest_" + guestId + "_firstname";
+        this.guestLastNameRef = "guest_" + guestId + "_lastname";
     }
 }

@@ -15,7 +15,7 @@ public class RuleChecker : MonoBehaviour
             {
                 if (!CheckRule(card, rule))
                 {
-                    string error = $"Rule violated: {card.GuestData.GuestNameRef} - {rule.type}";
+                    string error = $"Rule violated: {card.GuestData.GuestFirstNameRef} {card.GuestData.GuestLastNameRef} - {rule.type}";
                     result.Errors.Add(error);
                 }
             }
